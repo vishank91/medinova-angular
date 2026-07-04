@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { environment } from '../../../../../environments/environment.development';
 
 @Component({
   selector: 'app-navbar',
@@ -6,4 +7,19 @@ import { Component } from '@angular/core';
   templateUrl: './navbar.html',
   styleUrl: './navbar.css',
 })
-export class Navbar {}
+export class Navbar {
+  settingData = {
+    siteName: environment.siteName,
+    siteMap1: environment.siteMap1,
+    siteAddress: environment.siteAddress,
+    siteEmail: environment.siteEmail,
+    sitePhone: environment.sitePhone,
+    siteWhatsapp: environment.siteWhatsapp,
+    siteFacebook: environment.siteFacebook,
+    siteTwitter: environment.siteTwitter,
+    siteLinkedin: environment.siteLinkedin,
+    siteInstagram: environment.siteInstagram,
+    siteYoutube: environment.siteYoutube,
+  }
+
+}
