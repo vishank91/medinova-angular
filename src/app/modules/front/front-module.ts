@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { RouterLink } from '@angular/router';
 
 import { FrontRoutingModule } from './front-routing-module';
 import { Navbar } from './components/navbar/navbar';
@@ -40,6 +41,6 @@ import { ContactPage } from './pages/contact-page/contact-page';
     AppointmentPage,
     ContactPage,
   ],
-  imports: [CommonModule, FrontRoutingModule],
+  imports: [CommonModule, FrontRoutingModule,RouterLink],
 })
 export class FrontModule {}
