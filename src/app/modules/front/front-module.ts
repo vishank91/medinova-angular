@@ -42,6 +42,7 @@ import { ContactPage } from './pages/contact-page/contact-page';
     ContactPage,
   ],
   imports: [CommonModule, FrontRoutingModule, RouterLink],
-  schemas: [CUSTOM_ELEMENTS_SCHEMA]
+  schemas: [CUSTOM_ELEMENTS_SCHEMA],
+  exports: [Navbar, Footer]
 })
 export class FrontModule { }
