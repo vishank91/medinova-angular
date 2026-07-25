@@ -6,6 +6,7 @@
             <h1 class="display-4">Awesome Medical Programs</h1>
         </div>
         <div class="" style="padding: 0 45px 45px 45px;">
+            @if (isBrowser) {
             <swiper-container #swiper init="false">
                 <swiper-slide>
                     <div class="bg-light rounded text-center">
@@ -104,6 +105,7 @@
                     </div>
                 </swiper-slide>
             </swiper-container>
+            }
         </div>
     </div>
 </div>

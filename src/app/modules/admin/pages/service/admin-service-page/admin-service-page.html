@@ -6,7 +6,36 @@
             <app-admin-sidebar></app-admin-sidebar>
         </div>
         <div class="col-lg-9">
-            <h5 class="bg-primary p-2 text-center text-light">Service <a routerLink="/admin/service/create"><i class="bi bi-plus text-light float-end"></i></a></h5>
+            <h5 class="bg-primary p-2 text-center text-light">Service <a routerLink="/admin/service/create"><i
+                        class="bi bi-plus text-light float-end"></i></a></h5>
+            <div class="table-responsive">
+                <table class="table table-bordered">
+                    <thead>
+                        <tr>
+                            <th>Id</th>
+                            <th>Name</th>
+                            <th>Icon</th>
+                            <th>Short Description</th>
+                            <th>Status</th>
+                            <th></th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @for (item of data; track $index) {
+                        <tr>
+                            <td>{{item.id}}</td>
+                            <td>{{item.name}}</td>
+                            <td>{{item.icon}}</td>
+                            <td>{{item.shortDescription}}</td>
+                            <td>{{item.status?"Active":"Inactive"}}</td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
         </div>
     </div>
 </div>

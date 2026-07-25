@@ -8,13 +8,9 @@
         <div class="row justify-content-center">
             <div class="col-lg-8">
                 <div class="">
-                    <swiper-container 
-                        slides-per-view="1" 
-                        space-between="20" 
-                        navigation="true"
-                        pagination="false" 
-                        loop="true" 
-                        autoplay-delay="3000">
+                    @if (isBrowser) {
+                    <swiper-container slides-per-view="1" space-between="20" navigation="true" pagination="false"
+                        loop="true" autoplay-delay="3000">
                         <swiper-slide>
                             <div class="testimonial-item text-center">
                                 <div class="position-relative mb-5">
@@ -73,6 +69,7 @@
                             </div>
                         </swiper-slide>
                     </swiper-container>
+                    }
                 </div>
             </div>
         </div>

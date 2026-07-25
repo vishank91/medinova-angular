@@ -11,5 +11,6 @@ export const environment = {
     siteInstagram: "",
     siteLinkedin: "",
     siteYoutube: "",
-
+    backendServerURL: "http://localhost:8000",
+    imageServerURL: "http://localhost:8000"
 };

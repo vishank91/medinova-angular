@@ -1,12 +1,13 @@
 <!-- Team Start -->
-<div class="container-fluid py-5" >
+<div class="container-fluid py-5">
     <div class="container">
         <div class="text-center mx-auto mb-5" style="max-width: 500px;">
             <h5 class="d-inline-block text-primary text-uppercase border-bottom border-5">Our Doctors</h5>
             <h1 class="display-4">Qualified Healthcare Professionals</h1>
         </div>
         <div class="">
-            <swiper-container  #swiper init="false">
+            @if (isBrowser) {
+            <swiper-container #swiper init="false">
                 <swiper-slide>
                     <div class="team-item">
                         <div class="row g-0 bg-light rounded overflow-hidden">
@@ -86,6 +87,7 @@
                     </div>
                 </swiper-slide>
             </swiper-container>
+            }
         </div>
     </div>
 </div>

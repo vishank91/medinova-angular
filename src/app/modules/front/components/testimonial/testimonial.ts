@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, Inject, PLATFORM_ID } from '@angular/core';
+import { isPlatformBrowser } from '@angular/common';
 
 @Component({
   selector: 'app-testimonial',
@@ -7,5 +8,9 @@ import { Component } from '@angular/core';
   styleUrl: './testimonial.css',
 })
 export class Testimonial {
+  isBrowser = false;
 
+  constructor(@Inject(PLATFORM_ID) platformId: Object) {
+    this.isBrowser = isPlatformBrowser(platformId);
+  }
 }

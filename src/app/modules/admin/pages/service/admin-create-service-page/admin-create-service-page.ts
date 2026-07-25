@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { DataService } from '../../../../../services/data-service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-admin-create-service-page',
@@ -9,26 +11,38 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
 })
 export class AdminCreateServicePage {
   myForm = new FormGroup({
-    name: new FormControl("", [Validators.required, Validators.minLength(3), Validators.maxLength(3)]),
+    name: new FormControl("", [Validators.required, Validators.minLength(3), Validators.maxLength(30)]),
     icon: new FormControl("", Validators.required),
     shortDescription: new FormControl("", Validators.required),
-    description: new FormControl("", Validators.required),
-    status: new FormControl(true)
+    status: new FormControl("1")
   })
 
-  get name() {
+  get name(): any {
     return this.myForm.get("name")
   }
 
-  get icon() {
+  get icon(): any {
     return this.myForm.get("icon")
   }
 
-  get shortDescription() {
+  get shortDescription(): any {
     return this.myForm.get("shortDescription")
   }
 
-  get description() {
-    return this.myForm.get("description")
+  constructor(private dataService: DataService, private router: Router) { }
+
+  postData() {
+    let item = {
+      name: this.myForm.value.name,
+      icon: this.myForm.value.icon,
+      shortDescription: this.myForm.value.shortDescription,
+      status: this.myForm.value.status === "1" ? true : false
+    }
+    this.dataService.createData("service", item).subscribe((response: any) => {
+      if (response)
+        this.router.navigate(['/admin/service'])
+      else
+        alert("Internal Server Error")
+    })
   }
 }
