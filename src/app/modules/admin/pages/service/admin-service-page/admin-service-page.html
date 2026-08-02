@@ -26,11 +26,13 @@
                         <tr>
                             <td>{{item.id}}</td>
                             <td>{{item.name}}</td>
-                            <td>{{item.icon}}</td>
+                            <td><span style="font-size: 40px;" [innerHTML]="item.icon"></span></td>
                             <td>{{item.shortDescription}}</td>
                             <td>{{item.status?"Active":"Inactive"}}</td>
-                            <td></td>
-                            <td></td>
+                            <td><a [routerLink]="['/admin/service/update']" [queryParams]="{id:item.id}"
+                                    class="btn btn-primary"><i class="bi bi-pencil"></i></a></td>
+                            <td><button class="btn btn-danger" (click)="deleteRecord(item.id)"><i
+                                        class="bi bi-trash"></i></button></td>
                         </tr>
                         }
                     </tbody>
