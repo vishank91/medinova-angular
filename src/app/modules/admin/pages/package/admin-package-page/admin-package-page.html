@@ -30,14 +30,18 @@
                             <td>{{item.id}}</td>
                             <td>{{item.name}}</td>
                             <td>
-                                <a href="{{imageServerURL}}/{{item.pic}}" target="_blank">
+                                <a href="{{imageServerURL}}{{item.pic}}" target="_blank">
                                     <img src="{{imageServerURL}}{{item.pic}}" height="60px" width="100px" alt="">
                                 </a>
                             </td>
                             <td>&#8377;{{item.basePrice}}</td>
                             <td>{{item.discount}}% Off</td>
                             <td>&#8377;{{item.finalPrice}}</td>
-                            <td>{{item.shortDescription}}</td>
+                            <td>
+                                <div style="width: 500px;">
+                                    {{item.shortDescription}}
+                                </div>
+                            </td>
                             <td>{{item.status?"Active":"Inactive"}}</td>
                             <td><a [routerLink]="['/admin/package/update']" [queryParams]="{id:item.id}"
                                     class="btn btn-primary"><i class="bi bi-pencil"></i></a></td>

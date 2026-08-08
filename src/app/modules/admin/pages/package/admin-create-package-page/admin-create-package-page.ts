@@ -66,7 +66,7 @@ export class AdminCreatePackagePage {
   }
 
   getInputFile(event: any) {
-    this.pic = `/package/` + event.target.files[0].name
+    this.pic = `packages/` + event.target.files[0].name
     this.picError = false
   }
 }
